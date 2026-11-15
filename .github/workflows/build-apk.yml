@@ -1,3 +1,4 @@
+
 name: Build AVIREX DRIVE APK
 
 on:
@@ -20,14 +21,16 @@ jobs:
           distribution: 'temurin'
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
-          packages: 'platforms;android-34 build-tools;34.0.0'
+          cmdline-tools-version: 15859902
+          accept-android-sdk-licenses: true
+          packages: 'platform-tools platforms;android-34 build-tools;34.0.0'
 
       - name: Build Debug APK
         run: |
-          chmod +x gradlew || true
-          ./gradlew assembleDebug --stacktrace
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleDebug --stacktrace
 
       - name: Upload AVIREX-DRIVE APK
         uses: actions/upload-artifact@v4
