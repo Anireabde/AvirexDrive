@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AvirexDrive" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#070B14</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Theme.AvirexDrive.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#070B14</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_avirex_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.AvirexDrive</item>
+    </style>
+</resources>
